@@ -7,8 +7,12 @@
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.4",
+    "esm": "^3.0.84",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^14.0.2"
+  },
+  "scripts": {
+    "start": "node -r esm server.js"
   }
 }

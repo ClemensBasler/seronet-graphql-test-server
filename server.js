@@ -1,5 +1,5 @@
-var express = require('express');
-var graphqlHTTP = require('express-graphql');
+import express from 'express'
+import graphqlHTTP from 'express-graphql'
 var graphql  = require('graphql');
 var cors = require('cors')
 
