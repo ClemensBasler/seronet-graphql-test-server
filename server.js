@@ -49,17 +49,21 @@ var componentType = new graphql.GraphQLObjectType({
   }
 });
 
-// // Define the User type
-// var componentType = new graphql.GraphQLObjectType({
-//   name: 'component2',
-//   fields: {
-//     name: { type: graphql.GraphQLString },
-//     weight: { type: graphql.GraphQLInt },
-//     link: { type: graphql.GraphQLString },
-//     image: { type: graphql.GraphQLString },
-//     processor: { type: graphql.GraphQLString }
-//   }
-// });
+// Define the User type
+var componentType2 = new graphql.GraphQLObjectType({
+  name: 'component2',
+  fields: {
+    id: { type: graphql.GraphQLString },
+    sections: {
+      name: { type: graphql.GraphQLString },
+      fields: {
+        name: { type: graphql.GraphQLString },
+        value: { type: graphql.GraphQLString },
+        type: { type: graphql.GraphQLString }
+      }
+  }
+}
+});
 
 var componentListType = new graphql.GraphQLList(componentType);
 
