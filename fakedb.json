@@ -1,0 +1,61 @@
+[
+  {
+    "componentId": "rb1",
+    "createdAt": "2018-01-01T00:00:00",
+    "sections": [
+      {
+        "name": "Common Fields",
+        "fields": [
+          {
+            "name": {
+              "en": "Component Name",
+              "de": "Komponentenname"
+            },
+            "value": "RB-1 Base",
+            "type": "SIMPLE"
+          },
+          {
+            "name": {
+              "en": "Image",
+              "de": "Bild"
+            },
+            "value": {
+              "url": "https://www.robotnik.eu/web/wp-content/uploads//2014/03/logo.jpg",
+              "title": "Robotnik Logo"
+            },
+            "type": "LOGO"
+          },
+          {
+            "name": {
+              "en": "Link",
+              "de": "Link"
+            },
+            "type": "URL",
+            "value": "https://www.robotnik.eu/web/wp-content/uploads//2015/11/Robotnik_DATASHEET_RB-1-BASE_EN.pdf"
+          }
+        ]
+      },
+      {
+        "name": "Special Fields",
+        "fields": [
+          {
+            "name": {
+              "en": "Weight",
+              "de": "Gewicht"
+            },
+            "value": 50,
+            "type": "SIMPLE"
+          },
+          {
+            "name": {
+              "en": "Processor",
+              "de": "Prozessor"
+            },
+            "value": "4th generation Intel i5",
+            "type": "SIMPLE"
+          }
+        ]
+      }
+    ]
+  }
+]
