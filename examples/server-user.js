@@ -1,29 +1,29 @@
-var express = require('express');
-var graphqlHTTP = require('express-graphql');
-var graphql  = require('graphql');
+var express = require('express')
+var graphqlHTTP = require('express-graphql')
+var graphql = require('graphql')
 var cors = require('cors')
 
 // The root provides a resolver function for each API endpoint
 // Maps id to User object
 var fakeDatabase = {
-  'a': {
+  a: {
     id: 'a',
-    name: 'alice',
+    name: 'alice'
   },
-  'b': {
+  b: {
     id: 'b',
-    name: 'bob',
-  },
-};
+    name: 'bob'
+  }
+}
 
 // Define the User type
 var userType = new graphql.GraphQLObjectType({
   name: 'User',
   fields: {
     id: { type: graphql.GraphQLString },
-    name: { type: graphql.GraphQLString },
+    name: { type: graphql.GraphQLString }
   }
-});
+})
 
 // Define the Query type
 var queryType = new graphql.GraphQLObjectType({
@@ -35,12 +35,12 @@ var queryType = new graphql.GraphQLObjectType({
       args: {
         id: { type: graphql.GraphQLString }
       },
-      resolve: function (_, {id}) {
-        return fakeDatabase[id];
+      resolve: function (_, { id }) {
+        return fakeDatabase[id]
       }
     }
   }
-});
+})
 
 // // Define the Query type
 // var queryType = new graphql.GraphQLObjectType({
@@ -59,13 +59,17 @@ var queryType = new graphql.GraphQLObjectType({
 //   }
 // });
 
-var schema = new graphql.GraphQLSchema({query: queryType});
+var schema = new graphql.GraphQLSchema({ query: queryType })
 
-var app = express();
-app.use(cors());
-app.use('/graphql', cors(), graphqlHTTP({
-  schema: schema,
-  graphiql: true,
-}));
-app.listen(4000);
-console.log('Running a GraphQL API server at localhost:4000/graphql');
+var app = express()
+app.use(cors())
+app.use(
+  '/graphql',
+  cors(),
+  graphqlHTTP({
+    schema: schema,
+    graphiql: true
+  })
+)
+app.listen(4000)
+console.log('Running a GraphQL API server at localhost:4000/graphql')
