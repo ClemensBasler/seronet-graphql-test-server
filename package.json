@@ -1,9 +1,9 @@
 {
   "name": "seronet-graphql-test-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "server.js",
   "repository": "https://github.com/ClemensBasler/graphql-node-server",
-  "author": "clemens basler",
+  "author": "Clemens Basler",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.4",
