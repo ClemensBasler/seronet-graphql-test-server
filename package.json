@@ -1,13 +1,16 @@
 {
   "name": "seronet-graphql-test-server",
-  "version": "1.0.1",
+  "version": "1.2.1",
   "main": "server.js",
+  "description": "A server which delivers mockup data about SeRoNet components",
   "repository": "https://github.com/ClemensBasler/graphql-node-server",
+  "private": true,
   "author": "Clemens Basler",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.4",
     "esm": "^3.0.84",
+    "ramda": "^0.25.0",
   "devDependencies": {
     "dotenv": "^6.1.0",
     "eslint": "^4.19.1",
@@ -20,6 +23,8 @@
     "node-dev": "^3.1.3",
     "standard-version": "^4.4.0"
   },
+  "engines": {
+    "node": ">=8"
   },
   "scripts": {
     "start": "node -r esm server.js",
