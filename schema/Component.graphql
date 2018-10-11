@@ -8,6 +8,11 @@ type Query {
   getDatasheet(
     componentId: ID!
   ): DatasheetPayload
+  
+  """
+  Shows information about this graphql server.
+  This is useful for debugging when using multiple graphql servers.
+  """
   info: String!
 }
 
