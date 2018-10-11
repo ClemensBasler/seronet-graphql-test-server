@@ -1,0 +1,40 @@
+scalar JSON
+scalar DateTime
+
+type Query {
+  """
+  Find datasheet of a single component
+  """
+  getDatasheet(
+    componentId: ID!
+  ): DatasheetPayload
+  info: String!
+}
+
+type DatasheetPayload {
+  componentId: ID!
+  createdAt: DateTime!
+  sections:[DatasheetSection]
+}
+
+type DatasheetSection {
+  name: String!
+  fields: [DatasheetSectionFiled]
+}
+
+type DatasheetSectionFiled {
+  name: NameI18N!
+  value: JSON
+  type: FieldTypeEnum
+}
+
+type NameI18N {
+  en: String
+  de: String
+}
+enum FieldTypeEnum {
+  URL
+  SIMPLE
+  LOGO
+  IMAGE
+}
