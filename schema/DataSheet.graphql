@@ -7,13 +7,29 @@ type Query {
   """
   getDatasheet(
     componentId: ID!
+    lang: SupportedLanguage
   ): DatasheetPayload
-  
+
+  """
+  A list of available languages supported by SeRoNet
+  """
+  supportedLanguages: [SupportedLangPayload]
+
   """
   Shows information about this graphql server.
   This is useful for debugging when using multiple graphql servers.
   """
   info: String!
+}
+
+type SupportedLangPayload {
+  code: String!
+  name: String!
+}
+
+enum SupportedLanguage {
+  en
+  de
 }
 
 type DatasheetPayload {
@@ -24,22 +40,20 @@ type DatasheetPayload {
 
 type DatasheetSection {
   name: String!
+  mdicon: String!
   fields: [DatasheetSectionFiled]
 }
 
 type DatasheetSectionFiled {
-  name: NameI18N!
+  name: String
   value: JSON
   type: FieldTypeEnum
 }
 
-type NameI18N {
-  en: String
-  de: String
-}
 enum FieldTypeEnum {
   URL
   SIMPLE
   LOGO
   IMAGE
+  QUANTITY
 }
